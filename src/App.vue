@@ -14,3 +14,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.application--wrap {
+  background: url(assets/login-bg.jpg) no-repeat center center;
+  background-size: cover;
+}
+</style>
