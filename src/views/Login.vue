@@ -4,15 +4,6 @@
       <v-flex xs10 md4>
         <v-form>
           <v-text-field
-            v-model.lazy="name"
-            :error-messages="nameErrors"
-            :counter="10"
-            label="Name"
-            required
-            @input="$v.name.$touch()"
-            @blur="$v.name.$touch()"
-          ></v-text-field>
-          <v-text-field
             v-model.lazy="email"
             :error-messages="emailErrors"
             label="E-mail"
@@ -53,20 +44,12 @@ export default {
   },
 
   data: () => ({
-    name: '',
     email: '',
     password: '',
     showPass: false
   }),
 
   computed: {
-    nameErrors () {
-      const errors = []
-      if (!this.$v.name.$dirty) return errors
-      !this.$v.name.maxLength && errors.push('Name must be at most 10 characters long')
-      !this.$v.name.required && errors.push('Name is required.')
-      return errors
-    },
     emailErrors () {
       const errors = []
       if (!this.$v.email.$dirty) return errors
@@ -91,7 +74,6 @@ export default {
     },
     clear () {
       this.$v.$reset()
-      this.name = ''
       this.email = ''
       this.password = ''
     }
@@ -99,6 +81,8 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+form {
+  background-color: $main-font-color;
+}
 </style>
