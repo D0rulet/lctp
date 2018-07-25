@@ -1,7 +1,9 @@
 <template>
+<div>
   <v-app>
-    <Login />
+    <router-view></router-view>
   </v-app>
+</div>
 </template>
 
 <script>

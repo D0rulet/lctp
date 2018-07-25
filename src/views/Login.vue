@@ -87,6 +87,7 @@ export default {
   methods: {
     submit () {
       this.$v.$touch()
+      this.$router.push('/locations')
     },
     clear () {
       this.$v.$reset()
